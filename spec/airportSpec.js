@@ -1,16 +1,22 @@
-describe("airport", function() {
+'use strict';
 
-  beforeEach(function() {
-    airport = new airport();
-    });
-
-describe('#landing', function() {
-  it('lands a plane at the airport', function() {
-     expect(airport.land(plane)).toEqual([plane])
+describe('Airport', function(){
+  var airport;
+  var plane;
+  beforeEach(function(){
+    airport = new Airport();
+    plane = jasmine.createSpy('plane');
   });
-
-  // it("lands plane with 1 argument", function() {
-  //   expect(airport.land(plane)).toHaveBeenCalledWith(plane);
-  // });
-});
+  it('has no planes by default', function(){
+    expect(airport.planes()).toEqual([]);
+  });
+  it('can clear planes for landing', function() {
+    airport.clearForLanding(plane);
+    expect(airport.planes()).toEqual([plane]);
+  })
+  it('can clear planes for takeoff', function(){
+    airport.clearForLanding(plane);
+    airport.clearForTakeOff(plane);
+    expect(airport.planes()).toEqual([]);
+  });
 });

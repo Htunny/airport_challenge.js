@@ -1,41 +1,12 @@
-var planes = [];
+'use strict';
 
-function airport() {
-
-airport.prototype.land = function(plane) {
-  if (this.landing(plane)) {
-    return [plane];
-  }
-  }
+function Airport(){
+  this._hangar = [];
 }
-
-airport.prototype.landing = function(plane) {
-  return (planes).push(plane);
-  }
-
-function plane() {
-  }
-
-
-
-
-
-
-// function FizzBuzz() {
-// }
-//
-// FizzBuzz.prototype.play = function(number) {
-//   if (this.isDivisibleBy(15, number)) {
-//     return 'FizzBuzz';
-//   }
-//   if (this.isDivisibleBy(5, number)) {
-//     return 'Buzz';
-//   }
-//   if (this.isDivisibleBy(3, number)) {
-//     return 'Fizz';
-//   }
-//   return number;
-// }
-//
-// FizzBuzz.prototype.isDivisibleBy = function(divisor, number) {
-//   return number % divisor === 0;
+Airport.prototype.planes = function(){ return this._hangar; };
+Airport.prototype.clearForLanding = function(plane) {
+  this._hangar.push(plane);
+};
+Airport.prototype.clearForTakeOff = function(plane) {
+  this._hangar = [];
+};
