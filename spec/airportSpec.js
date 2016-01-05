@@ -29,7 +29,7 @@ describe('under normal conditions', function(){
 });
 
 describe('under stormy conditions',function(){
-  var airport2
+  var airport2;
   beforeEach(function(){
     airport2 = new Airport();
     spyOn(airport2.weather, "thunder").and.returnValue(true);
