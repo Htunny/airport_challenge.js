@@ -14,8 +14,6 @@ describe("Airport", function(){
   });
 
 describe('under normal conditions', function(){
-    beforeEach(function(){
-    });
   it('can clear planes for landing', function() {
     airport.clearForLanding(plane);
     expect(airport.planes()).toEqual([plane]);
