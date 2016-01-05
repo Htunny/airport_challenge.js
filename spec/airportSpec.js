@@ -6,7 +6,11 @@ describe("airport", function() {
 
 describe('#landing', function() {
   it('lands a plane at the airport', function() {
-     expect(airport.land(plane)).toEqual[plane]
+     expect(airport.land(plane)).toEqual([plane])
   });
+
+  // it("lands plane with 1 argument", function() {
+  //   expect(airport.land(plane)).toHaveBeenCalledWith(plane);
+  // });
 });
 });
